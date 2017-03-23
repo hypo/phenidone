@@ -8,10 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		85CC0A351D9259700072E8D9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CC0A341D9259700072E8D9 /* main.swift */; };
+		85FFAE741E83ACF300B9332E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE731E83ACF300B9332E /* Metric.swift */; };
+		85FFAE761E83AEAD00B9332E /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE751E83AEAD00B9332E /* Render.swift */; };
+		85FFAE7F1E83B77E00B9332E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE7E1E83B77E00B9332E /* main.swift */; };
+		85FFAE831E83B78E00B9332E /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE751E83AEAD00B9332E /* Render.swift */; };
+		85FFAE841E83B97000B9332E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE731E83ACF300B9332E /* Metric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		85CC0A2F1D9259700072E8D9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		85FFAE7A1E83B77E00B9332E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,10 +39,21 @@
 /* Begin PBXFileReference section */
 		85CC0A311D9259700072E8D9 /* phenidone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phenidone; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CC0A341D9259700072E8D9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		85FFAE731E83ACF300B9332E /* Metric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		85FFAE751E83AEAD00B9332E /* Render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Render.swift; sourceTree = "<group>"; };
+		85FFAE7C1E83B77E00B9332E /* PhenidoneTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PhenidoneTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85FFAE7E1E83B77E00B9332E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		85CC0A2E1D9259700072E8D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85FFAE791E83B77E00B9332E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				85CC0A331D9259700072E8D9 /* phenidone */,
+				85FFAE7D1E83B77E00B9332E /* PhenidoneTest */,
 				85CC0A321D9259700072E8D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				85CC0A311D9259700072E8D9 /* phenidone */,
+				85FFAE7C1E83B77E00B9332E /* PhenidoneTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +84,19 @@
 		85CC0A331D9259700072E8D9 /* phenidone */ = {
 			isa = PBXGroup;
 			children = (
+				85FFAE751E83AEAD00B9332E /* Render.swift */,
+				85FFAE731E83ACF300B9332E /* Metric.swift */,
 				85CC0A341D9259700072E8D9 /* main.swift */,
 			);
 			path = phenidone;
+			sourceTree = "<group>";
+		};
+		85FFAE7D1E83B77E00B9332E /* PhenidoneTest */ = {
+			isa = PBXGroup;
+			children = (
+				85FFAE7E1E83B77E00B9332E /* main.swift */,
+			);
+			path = PhenidoneTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,18 +119,40 @@
 			productReference = 85CC0A311D9259700072E8D9 /* phenidone */;
 			productType = "com.apple.product-type.tool";
 		};
+		85FFAE7B1E83B77E00B9332E /* PhenidoneTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85FFAE801E83B77E00B9332E /* Build configuration list for PBXNativeTarget "PhenidoneTest" */;
+			buildPhases = (
+				85FFAE781E83B77E00B9332E /* Sources */,
+				85FFAE791E83B77E00B9332E /* Frameworks */,
+				85FFAE7A1E83B77E00B9332E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhenidoneTest;
+			productName = PhenidoneTest;
+			productReference = 85FFAE7C1E83B77E00B9332E /* PhenidoneTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		85CC0A291D9259700072E8D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Hypo;
 				TargetAttributes = {
 					85CC0A301D9259700072E8D9 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Y2DE56X55C;
+						ProvisioningStyle = Automatic;
+					};
+					85FFAE7B1E83B77E00B9332E = {
+						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Y2DE56X55C;
 						ProvisioningStyle = Automatic;
 					};
@@ -112,6 +171,7 @@
 			projectRoot = "";
 			targets = (
 				85CC0A301D9259700072E8D9 /* phenidone */,
+				85FFAE7B1E83B77E00B9332E /* PhenidoneTest */,
 			);
 		};
 /* End PBXProject section */
@@ -121,7 +181,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FFAE741E83ACF300B9332E /* Metric.swift in Sources */,
 				85CC0A351D9259700072E8D9 /* main.swift in Sources */,
+				85FFAE761E83AEAD00B9332E /* Render.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85FFAE781E83B77E00B9332E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FFAE841E83B97000B9332E /* Metric.swift in Sources */,
+				85FFAE831E83B78E00B9332E /* Render.swift in Sources */,
+				85FFAE7F1E83B77E00B9332E /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +218,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -194,6 +267,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -213,6 +287,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -226,6 +301,24 @@
 			name = Debug;
 		};
 		85CC0A3A1D9259700072E8D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y2DE56X55C;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		85FFAE811E83B77E00B9332E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y2DE56X55C;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		85FFAE821E83B77E00B9332E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = Y2DE56X55C;
@@ -251,6 +344,15 @@
 			buildConfigurations = (
 				85CC0A391D9259700072E8D9 /* Debug */,
 				85CC0A3A1D9259700072E8D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85FFAE801E83B77E00B9332E /* Build configuration list for PBXNativeTarget "PhenidoneTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85FFAE811E83B77E00B9332E /* Debug */,
+				85FFAE821E83B77E00B9332E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

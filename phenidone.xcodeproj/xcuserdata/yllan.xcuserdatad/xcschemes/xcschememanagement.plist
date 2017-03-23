@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PhenidoneTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>phenidone.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>85CC0A301D9259700072E8D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85FFAE7B1E83B77E00B9332E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
