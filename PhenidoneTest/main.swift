@@ -50,7 +50,6 @@ testRender(url: URL(fileURLWithPath: "/tmp/group.pdf"),
 let dutch: CGPDFDocument = CGPDFDocument(URL(fileURLWithPath: "/tmp/dutch.pdf") as CFURL)!
 let p: CGPDFPage = dutch.page(at: 1)!
 
-
 testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf.pdf"),
            pages: [PageCommand(size: CGSize(width:30.cm, height:30.cm),
                                content: [
@@ -72,6 +71,12 @@ testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf_mode.pdf"),
                                 StrokeRectCommand(rect: r2),
                                 DrawPDFIntoRect(page: p, rect: r3, mode: .ScaleToFill),
                                 StrokeRectCommand(rect: r3)
-                                
             ])])
 
+
+testRender(url: URL(fileURLWithPath: "/tmp/clip_pdf_mode.pdf"),
+           pages: [PageCommand(size: CGSize(width:30.cm, height:30.cm),
+                               content: [
+                                ClipCommand(bezierPath: NSBezierPath(ovalIn: r1), content: DrawPDFIntoRect(page: p, rect: r1)),
+                                ClipCommand(bezierPath: NSBezierPath(roundedRect: r2, xRadius: CGFloat(2.cm), yRadius: CGFloat(2.cm)), content: DrawPDFIntoRect(page: p, rect: r2))
+            ])])

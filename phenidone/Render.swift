@@ -54,6 +54,33 @@ struct DrawPDFCommand: DrawCommand {
     }
 }
 
+struct ClipCommand: DrawCommand {
+    var bezierPath: NSBezierPath
+    var content: DrawCommand
+    
+    func render(ctx: CGContext) {
+        ctx.saveGState()
+        for idx in 0..<self.bezierPath.elementCount {
+            let points = NSPointArray.allocate(capacity: 3)
+            let e = self.bezierPath.element(at: idx, associatedPoints: points)
+            switch e {
+            case .closePathBezierPathElement:
+                ctx.closePath()
+            case .curveToBezierPathElement:
+                ctx.addCurve(to: points[2], control1: points[0], control2: points[1])
+            case .lineToBezierPathElement:
+                ctx.addLine(to: points[0])
+            case .moveToBezierPathElement:
+                ctx.move(to: points[0])
+            }
+            points.deallocate(capacity: 3)
+        }
+        ctx.clip()
+        content.render(ctx: ctx)
+        ctx.restoreGState()
+    }
+}
+
 struct ScaleCommand: DrawCommand {
     var x: CGFloat
     var y: CGFloat
