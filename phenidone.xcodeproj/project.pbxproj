@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85AB85C31E8514AA001EB969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB85C21E8514AA001EB969 /* AppDelegate.swift */; };
+		85AB85C51E8514AA001EB969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB85C41E8514AA001EB969 /* Assets.xcassets */; };
+		85AB85C81E8514AA001EB969 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AB85C61E8514AA001EB969 /* MainMenu.xib */; };
+		85AB85CD1E851D6E001EB969 /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE751E83AEAD00B9332E /* Render.swift */; };
+		85AB85CE1E851D6E001EB969 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE731E83ACF300B9332E /* Metric.swift */; };
 		85CC0A351D9259700072E8D9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CC0A341D9259700072E8D9 /* main.swift */; };
 		85FFAE741E83ACF300B9332E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE731E83ACF300B9332E /* Metric.swift */; };
 		85FFAE761E83AEAD00B9332E /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFAE751E83AEAD00B9332E /* Render.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85AB85C01E8514AA001EB969 /* JetPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AB85C21E8514AA001EB969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85AB85C41E8514AA001EB969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85AB85C71E8514AA001EB969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		85AB85C91E8514AA001EB969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CC0A311D9259700072E8D9 /* phenidone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phenidone; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CC0A341D9259700072E8D9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		85FFAE731E83ACF300B9332E /* Metric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
@@ -46,6 +56,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		85AB85BD1E8514AA001EB969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85CC0A2E1D9259700072E8D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,11 +80,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85AB85C11E8514AA001EB969 /* JetPack */ = {
+			isa = PBXGroup;
+			children = (
+				85AB85C21E8514AA001EB969 /* AppDelegate.swift */,
+				85AB85C41E8514AA001EB969 /* Assets.xcassets */,
+				85AB85C61E8514AA001EB969 /* MainMenu.xib */,
+				85AB85C91E8514AA001EB969 /* Info.plist */,
+			);
+			path = JetPack;
+			sourceTree = "<group>";
+		};
 		85CC0A281D9259700072E8D9 = {
 			isa = PBXGroup;
 			children = (
 				85CC0A331D9259700072E8D9 /* phenidone */,
 				85FFAE7D1E83B77E00B9332E /* PhenidoneTest */,
+				85AB85C11E8514AA001EB969 /* JetPack */,
 				85CC0A321D9259700072E8D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +106,7 @@
 			children = (
 				85CC0A311D9259700072E8D9 /* phenidone */,
 				85FFAE7C1E83B77E00B9332E /* PhenidoneTest */,
+				85AB85C01E8514AA001EB969 /* JetPack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +132,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		85AB85BF1E8514AA001EB969 /* JetPack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85AB85CC1E8514AA001EB969 /* Build configuration list for PBXNativeTarget "JetPack" */;
+			buildPhases = (
+				85AB85BC1E8514AA001EB969 /* Sources */,
+				85AB85BD1E8514AA001EB969 /* Frameworks */,
+				85AB85BE1E8514AA001EB969 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JetPack;
+			productName = JetPack;
+			productReference = 85AB85C01E8514AA001EB969 /* JetPack.app */;
+			productType = "com.apple.product-type.application";
+		};
 		85CC0A301D9259700072E8D9 /* phenidone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85CC0A381D9259700072E8D9 /* Build configuration list for PBXNativeTarget "phenidone" */;
@@ -146,6 +193,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Hypo;
 				TargetAttributes = {
+					85AB85BF1E8514AA001EB969 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y2DE56X55C;
+						ProvisioningStyle = Automatic;
+					};
 					85CC0A301D9259700072E8D9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y2DE56X55C;
@@ -164,6 +216,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 85CC0A281D9259700072E8D9;
 			productRefGroup = 85CC0A321D9259700072E8D9 /* Products */;
@@ -172,11 +225,34 @@
 			targets = (
 				85CC0A301D9259700072E8D9 /* phenidone */,
 				85FFAE7B1E83B77E00B9332E /* PhenidoneTest */,
+				85AB85BF1E8514AA001EB969 /* JetPack */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		85AB85BE1E8514AA001EB969 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AB85C51E8514AA001EB969 /* Assets.xcassets in Resources */,
+				85AB85C81E8514AA001EB969 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		85AB85BC1E8514AA001EB969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AB85CD1E851D6E001EB969 /* Render.swift in Sources */,
+				85AB85CE1E851D6E001EB969 /* Metric.swift in Sources */,
+				85AB85C31E8514AA001EB969 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85CC0A2D1D9259700072E8D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,7 +275,47 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		85AB85C61E8514AA001EB969 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85AB85C71E8514AA001EB969 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		85AB85CA1E8514AA001EB969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y2DE56X55C;
+				INFOPLIST_FILE = JetPack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.hypo.JetPack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		85AB85CB1E8514AA001EB969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y2DE56X55C;
+				INFOPLIST_FILE = JetPack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.hypo.JetPack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		85CC0A361D9259700072E8D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +446,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		85AB85CC1E8514AA001EB969 /* Build configuration list for PBXNativeTarget "JetPack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AB85CA1E8514AA001EB969 /* Debug */,
+				85AB85CB1E8514AA001EB969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		85CC0A2C1D9259700072E8D9 /* Build configuration list for PBXProject "phenidone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -355,6 +479,7 @@
 				85FFAE821E83B77E00B9332E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
