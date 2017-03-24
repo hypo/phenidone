@@ -134,6 +134,21 @@ struct PageCommand: DrawCommand {
     }
 }
 
+struct TextCommand: DrawCommand {
+    var rect: CGRect
+    var text: String
+    
+    func render(ctx: CGContext) {
+        ctx.saveGState()
+        let cocoagc = NSGraphicsContext(cgContext: ctx, flipped: false)
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.setCurrent(cocoagc)
+        (text as NSString).draw(in: self.rect, withAttributes: nil)
+        NSGraphicsContext.restoreGraphicsState()
+        ctx.restoreGState()
+    }
+}
+
 // MARK: - High Level
 
 enum ContentMode {

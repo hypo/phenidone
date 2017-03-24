@@ -77,6 +77,8 @@ testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf_mode.pdf"),
 testRender(url: URL(fileURLWithPath: "/tmp/clip_pdf_mode.pdf"),
            pages: [PageCommand(size: CGSize(width:30.cm, height:30.cm),
                                content: [
+                                TextCommand(rect: CGRect(x: 1.cm, y: 20.cm, width: 10.cm, height: 2.cm), text: "left"),
                                 ClipCommand(bezierPath: NSBezierPath(ovalIn: r1), content: DrawPDFIntoRect(page: p, rect: r1)),
+                                TextCommand(rect: CGRect(x: 11.cm, y: 20.cm, width: 10.cm, height: 2.cm), text: "right"),
                                 ClipCommand(bezierPath: NSBezierPath(roundedRect: r2, xRadius: CGFloat(2.cm), yRadius: CGFloat(2.cm)), content: DrawPDFIntoRect(page: p, rect: r2))
             ])])
