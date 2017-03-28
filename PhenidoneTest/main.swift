@@ -47,7 +47,8 @@ testRender(url: URL(fileURLWithPath: "/tmp/group.pdf"),
                             FillRectCommand(rect: CGRect(x: 5.cm, y: 6.cm, width: 4.cm, height: 3.cm))
                             ])])])
 
-let dutch: CGPDFDocument = CGPDFDocument(URL(fileURLWithPath: "/tmp/dutch.pdf") as CFURL)!
+let dutchURL = URL(fileURLWithPath: "/tmp/dutch.pdf")
+let dutch: CGPDFDocument = CGPDFDocument(dutchURL as CFURL)!
 let p: CGPDFPage = dutch.page(at: 1)!
 
 testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf.pdf"),
@@ -55,7 +56,7 @@ testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf.pdf"),
                                content: [
                                 TranslateCommand(x: CGFloat(2.cm), y: CGFloat(3.cm)),
                                 ScaleCommand(x: 0.5, y: 0.5),
-                                DrawPDFCommand(page: p)
+                                DrawPDFCommand(pdfURL: dutchURL, page: 1)
                     ])])
 
 let r1 = CGRect(x: 1.cm, y: 11.cm, width: 8.cm, height: 8.cm)
@@ -65,11 +66,11 @@ let r3 = CGRect(x: 21.cm, y: 11.cm, width: 8.cm, height: 8.cm)
 testRender(url: URL(fileURLWithPath: "/tmp/draw_pdf_mode.pdf"),
            pages: [PageCommand(size: CGSize(width:30.cm, height:30.cm),
                                content: [
-                                DrawPDFIntoRect(page: p, rect: r1, mode: .AspectFill),
+                                DrawPDFIntoRect(pdfURL: dutchURL, rect: r1, mode: .AspectFill),
                                 StrokeRectCommand(rect: r1),
-                                DrawPDFIntoRect(page: p, rect: r2, mode: .AspectFit),
+                                DrawPDFIntoRect(pdfURL: dutchURL, rect: r2, mode: .AspectFit),
                                 StrokeRectCommand(rect: r2),
-                                DrawPDFIntoRect(page: p, rect: r3, mode: .ScaleToFill),
+                                DrawPDFIntoRect(pdfURL: dutchURL, rect: r3, mode: .ScaleToFill),
                                 StrokeRectCommand(rect: r3)
             ])])
 
@@ -78,7 +79,7 @@ testRender(url: URL(fileURLWithPath: "/tmp/clip_pdf_mode.pdf"),
            pages: [PageCommand(size: CGSize(width:30.cm, height:30.cm),
                                content: [
                                 TextCommand(rect: CGRect(x: 1.cm, y: 20.cm, width: 10.cm, height: 2.cm), text: "left"),
-                                ClipCommand(bezierPath: NSBezierPath(ovalIn: r1), content: DrawPDFIntoRect(page: p, rect: r1)),
+                                ClipCommand(bezierPath: NSBezierPath(ovalIn: r1), content: DrawPDFIntoRect(pdfURL: dutchURL, rect: r1)),
                                 TextCommand(rect: CGRect(x: 11.cm, y: 20.cm, width: 10.cm, height: 2.cm), text: "right"),
-                                ClipCommand(bezierPath: NSBezierPath(roundedRect: r2, xRadius: CGFloat(2.cm), yRadius: CGFloat(2.cm)), content: DrawPDFIntoRect(page: p, rect: r2))
+                                ClipCommand(bezierPath: NSBezierPath(roundedRect: r2, xRadius: CGFloat(2.cm), yRadius: CGFloat(2.cm)), content: DrawPDFIntoRect(pdfURL: dutchURL, rect: r2))
             ])])

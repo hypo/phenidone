@@ -47,10 +47,14 @@ struct StrokeRectCommand: DrawCommand {
 }
 
 struct DrawPDFCommand: DrawCommand {
-    var page: CGPDFPage
+    var pdfURL: URL
+    var page: Int = 1
     
     func render(ctx: CGContext) {
-        ctx.drawPDFPage(self.page)
+        let pdf = CGPDFDocument(self.pdfURL as CFURL)
+        if let page = pdf?.page(at: self.page) {
+            ctx.drawPDFPage(page)
+        }
     }
 }
 
@@ -158,17 +162,24 @@ enum ContentMode {
 }
 
 struct DrawPDFIntoRect: DrawCommand {
-    var page: DrawPDFCommand
+    var pdfURL: URL
     var rect: CGRect
     var mode: ContentMode
+    var page: Int
     
-    init(page: CGPDFPage, rect: CGRect, mode: ContentMode = .ScaleToFill) {
-        self.page = DrawPDFCommand(page: page)
+    init(pdfURL: URL, rect: CGRect, mode: ContentMode = .ScaleToFill, page: Int = 1) {
+        self.pdfURL = pdfURL
         self.rect = rect
         self.mode = mode
+        self.page = page
     }
     
     func render(ctx: CGContext) {
+        let pdf = CGPDFDocument(self.pdfURL as CFURL)
+        guard let page = pdf?.page(at: 1) else {
+            return
+        }
+        
         if self.rect.width == 0 || self.rect.height == 0 {
             return
         }
@@ -178,21 +189,21 @@ struct DrawPDFIntoRect: DrawCommand {
 
         switch self.mode {
             case .ScaleToFill:
-                ctm = page.page.getDrawingTransform(CGPDFBox.mediaBox, rect: rect, rotate: 0, preserveAspectRatio: false)
+                ctm = page.getDrawingTransform(CGPDFBox.mediaBox, rect: rect, rotate: 0, preserveAspectRatio: false)
             case .AspectFit:
-                ctm = page.page.getDrawingTransform(CGPDFBox.mediaBox, rect: rect, rotate: 0, preserveAspectRatio: true)
+                ctm = page.getDrawingTransform(CGPDFBox.mediaBox, rect: rect, rotate: 0, preserveAspectRatio: true)
             case .AspectFill:
-                let pageSize = page.page.getBoxRect(.mediaBox).size
+                let pageSize = page.getBoxRect(.mediaBox).size
                 let scaleX = self.rect.width / pageSize.width
                 let scaleY = self.rect.height / pageSize.height
                 let scale = max(scaleX, scaleY)
                 let newSize = CGSize(width: pageSize.width * scale, height: pageSize.height)
                 let newRect = CGRect(origin: CGPoint(x: self.rect.midX - newSize.width / 2, y: self.rect.midY - newSize.height / 2), size: newSize)
-                ctm = page.page.getDrawingTransform(CGPDFBox.mediaBox, rect: newRect, rotate: 0, preserveAspectRatio: true)
+                ctm = page.getDrawingTransform(CGPDFBox.mediaBox, rect: newRect, rotate: 0, preserveAspectRatio: true)
         }
         
         ctx.concatenate(ctm)
-        self.page.render(ctx: ctx)
+        ctx.drawPDFPage(page)
         ctx.restoreGState()
     }
 }

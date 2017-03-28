@@ -81,12 +81,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let url = pdfURLs[idx]
                 let filename = url.lastPathComponent
                 
-                let pdfDocument = CGPDFDocument(url as CFURL)!
-                let page = pdfDocument.page(at: 1)!
-                
                 contents.append(TextCommand(rect: textSlot, text: filename))
                 contents.append(ClipCommand(bezierPath: NSBezierPath(roundedRect: imageSlot, xRadius: CGFloat(0.5.cm), yRadius: CGFloat(0.5.cm)), content:
-                    DrawPDFIntoRect(page: page, rect: imageSlot)
+                    DrawPDFIntoRect(pdfURL: url, rect: imageSlot)
                 ))
                 
             }
